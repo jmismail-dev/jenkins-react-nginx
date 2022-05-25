@@ -15,9 +15,6 @@ pipeline {
                 sh '''
                    npm install
                    npm run build
-                   cd client/
-                   npm install --force
-                   npm run build
                 '''
             }
         }
