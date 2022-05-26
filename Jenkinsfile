@@ -26,7 +26,7 @@ pipeline {
                 ]) {
                     sh "cd ${WORKSPACE}"
                     // sh 'sudo rsync -avr -e "ssh -l jmismail" --exclude="client" . jmismail@${SERVER_IP_ADDRESS}:/home/jmismail/jenkins-react-nginx'
-                    sh 'sudo rsync -avz --stats --rsync-path="echo ${SERVER_PASSWORD} | sudo -Sv && sudo rsync" ${WORKSPACE}/dist/ jmismail@${SERVER_IP_ADDRESS}:/home/jenkins-react-nginx/'
+                    sh 'sudo rsync -avz --stats --rsync-path="echo ${SERVER_PASSWORD} | sudo -Sv && sudo rsync" ${WORKSPACE}/dist/ jmismail@${SERVER_IP_ADDRESS}:/home/jmismail/jenkins-react-nginx/'
                 }
             }
         }
