@@ -4,7 +4,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p> Build with Jenkins #12 </p>
+        <h3>Nginx Server</h3>
+        <p> Build with Jenkins #100</p>
       </header>
     </div>
   )
