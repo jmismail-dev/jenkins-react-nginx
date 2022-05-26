@@ -19,14 +19,14 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
+            steps { 
                 withCredentials([
                     string(credentialsId: 'ts-notes-server-ip', variable: 'SERVER_IP_ADDRESS'),
                     string(credentialsId: 'ts-notes-server-password', variable: 'SERVER_PASSWORD'),
                 ]) {
                     sh "cd ${WORKSPACE}"
                     // sh 'sudo rsync -avr -e "ssh -l jmismail" --exclude="client" . jmismail@${SERVER_IP_ADDRESS}:/home/jmismail/jenkins-react-nginx'
-                    sh 'sudo rsync -avz --stats --rsync-path="echo ${SERVER_PASSWORD} | sudo -Sv && sudo rsync" ${WORKSPACE}/dist/ jmismail@${SERVER_IP_ADDRESS}:/home/jmismail/jenkins-react-nginx/'
+                    sh 'sudo rsync -avz --stats --rsync-path="echo ${SERVER_PASSWORD} | sudo -Sv && sudo rsync" ${WORKSPACE}/dist/ jmismail@${SERVER_IP_ADDRESS}:/usr/share/nginx/jenkins-react-nginx;'
                 }
             }
         }
