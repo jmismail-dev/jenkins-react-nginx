@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h3>Nginx Server</h3>
-        <p> Build with Jenkins 200</p>
+        <p> Build #1</p>
       </header>
     </div>
   )
